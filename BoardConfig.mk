@@ -139,6 +139,10 @@ TW_INCLUDE_LPTOOLS := true
 # F2FS
 TW_ENABLE_FS_COMPRESSION := false
 
+# ADB FIX
+TW_HAS_ADB := true
+TW_HAS_MTP := true
+
 # Debug
 TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true
