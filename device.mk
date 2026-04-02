@@ -81,7 +81,7 @@ PRODUCT_PACKAGES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1
+    android.hardware.keymaster@5.0
 
 # Keystore Hal
 PRODUCT_PACKAGES += \
@@ -109,7 +109,15 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Additional configs
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@5.0
 
 TARGET_RECOVERY_DEVICE_MODULES += \
-    android.hardware.keymaster@4.1
+    android.hardware.keymaster@5.0
+
+# MediaTek specific keymaster support
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.keymaster_version=5.0
+
+# Para sa TWRP crypto
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.twrp.keymaster.version=5.0
