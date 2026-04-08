@@ -1,28 +1,18 @@
-# Additional
-ro.board.platform=mt6789
-ro.mtk_key_manager_support=1
-ro.vendor.tran.avb_key=release_v1
-ro.vendor.tran.keystoredb.protect.support=1
-persist.vendor.kernel.version=5
-ro.vendor.usb.kpoc_adb=0
-
-# Common tree properties
 # Fstab
 ro.postinstall.fstab.prefix=/system
 
 # USB MTP
 ro.sys.usb.storage.type=mtp
-persist.sys.usb.config=none
 
 # Crypto
+ro.crypto.dm_default_key=true
 ro.crypto.volume.filenames_mode=aes-256-cts
 
 # Gatekeeper
 ro.hardware.gatekeeper=trustonic
-ro.hardware.kmsetkey=trustonic
 
 # TEE
 ro.vendor.mtk_tee_gp_support=1
 ro.vendor.mtk_trustonic_tee_support=1
 
-ro.vendor.keymaster_version=5.0
+keymaster_ver=4.1
