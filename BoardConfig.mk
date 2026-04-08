@@ -18,8 +18,6 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a55
 
-TARGET_USES_64_BIT_BINDER := true
-
 # Power
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
@@ -98,9 +96,6 @@ TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 # Platform (chipset)
 TARGET_BOARD_PLATFORM := mt6789
 
-# VNDK
-BOARD_VNDK_VERSION := current
-
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
@@ -118,15 +113,16 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Crypto
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
 TW_USE_FSCRYPT_POLICY := 2
 TW_FORCE_KEYMASTER_VER := true
-OF_FORCE_KEYMASTER_VERSION := 5.0
-TW_USE_KEYMASTER_V5 := true
+TW_INCLUDE_LIBRESETPROP := true
+TW_PREPARE_DATA_MEDIA := true
 
 # Hack
-PLATFORM_SECURITY_PATCH := 2099-12-31
-PLATFORM_VERSION := 99.87.36
-PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
+PLATFORM_SECURITY_PATCH := 2026-01-01
+PLATFORM_VERSION := 15
+PLATFORM_VERSION_LAST_STABLE := 14
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
@@ -136,13 +132,29 @@ TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_LPTOOLS := true
+TW_SCREEN_BLANK_ON_BOOT := true
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+
+# Touch and Display Module Loading
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := \
+    $(DEVICE_PATH)/recovery/root/lib/modules/mtk_disp_notify.ko \
+    $(DEVICE_PATH)/recovery/root/lib/modules/adapter_class.ko \
+    $(DEVICE_PATH)/recovery/root/lib/modules/mtk-kpd.ko \
+    $(DEVICE_PATH)/recovery/root/lib/modules/tran_drm_panel_i2c.ko \
+    $(DEVICE_PATH)/recovery/root/lib/modules/nt37706a_fhdp_dsi_vdo_dsc_boe_boe_144hz_km7k.ko \
+    $(DEVICE_PATH)/recovery/root/lib/modules/vtdr6126a_fhdp_dsi_vdo_dsc_tm_tm_144hz_km7k.ko \
+    $(DEVICE_PATH)/recovery/root/lib/modules/adaptive-ts.ko
+
+# Force Touch Recognition
+TW_LOAD_VENDOR_MODULES := true
+BOARD_HAS_MTK_TOUCH := true
+TW_SUPPORT_INPUT_1_2 := true
+TW_INPUT_BLACKLIST := ""
+TW_DISABLE_OZONE := true
+TW_FRAMERATE := 144
 
 # F2FS
 TW_ENABLE_FS_COMPRESSION := false
-
-# ADB FIX
-TW_HAS_ADB := true
-TW_HAS_MTP := true
 
 # Debug
 TARGET_USES_LOGD := true
@@ -160,7 +172,6 @@ TW_DEFAULT_BRIGHTNESS := 80
 TW_EXCLUDE_APEX := true
 TW_EXCLUDE_LPDUMP := true
 TW_EXTRA_LANGUAGES := true
-TW_FRAMERATE := 120
 TW_THEME := portrait_hdpi
 TARGET_USES_MKE2FS := true
 TW_MAX_BRIGHTNESS := 255
@@ -179,8 +190,7 @@ ALLOW_MISSING_DEPENDENCIES := true
 TARGET_OTA_ASSERT_DEVICE := TECNO-KM7k
 
 # Brightness
-# TW_DEFAULT_BRIGHTNESS := 2047
-# TW_MAX_BRIGHTNESS := 4095
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_TECNO-KM7k
