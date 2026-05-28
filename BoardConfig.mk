@@ -43,7 +43,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_USES_UEFI := true
 
 # Display
-TARGET_SCREEN_DENSITY := 420
+TARGET_SCREEN_DENSITY := 360
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -203,7 +203,7 @@ TW_DEFAULT_LANGUAGE := ru
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_LOAD_VENDOR_BOOT_MODULES := true
-TW_DEVICE_VERSION := KM7k
+TW_DEVICE_VERSION := KM7k_Novicio301129
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone28/temp"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 #TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
