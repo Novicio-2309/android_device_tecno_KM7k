@@ -19,7 +19,7 @@
 #
 
 #set -o xtrace
-FDEVICE="X6850"
+FDEVICE="KM7k"
 
 # Shell compatibility detection
 if [ -n "$ZSH_VERSION" ]; then
@@ -93,12 +93,12 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_DEFAULT_KEYMASTER_VERSION=4.1
 
 	# screen settings
-	export OF_SCREEN_H=2400
-	export OF_STATUS_H=95
-	export OF_STATUS_INDENT_LEFT=48
-	export OF_STATUS_INDENT_RIGHT=48
-	export OF_ALLOW_DISABLE_NAVBAR=0
-	export OF_CLOCK_POS=1
+	#export OF_SCREEN_H=2400
+	#export OF_STATUS_H=95
+	#export OF_STATUS_INDENT_LEFT=48
+	#export OF_STATUS_INDENT_RIGHT=48
+	#export OF_ALLOW_DISABLE_NAVBAR=0
+	#export OF_CLOCK_POS=1
 
 	# other stuff
 	export OF_QUICK_BACKUP_LIST="/boot:/data"
