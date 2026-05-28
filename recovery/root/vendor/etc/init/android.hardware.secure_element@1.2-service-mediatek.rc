@@ -1,0 +1,8 @@
+on init
+    start mtk_secure_element_hal_service
+
+service mtk_secure_element_hal_service /vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
+    class hal
+    user root
+    group root
+    seclabel u:r:recovery:s0
