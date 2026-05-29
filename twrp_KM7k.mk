@@ -27,7 +27,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Configure twrp config common.mk
-$(call inherit-product, vendor/twrp/config/common.mk)
+$(call inherit-product, vendor/pb/config/common.mk)
 
 # Configure compression
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression.mk)
@@ -40,7 +40,7 @@ $(call inherit-product, device/tecno/KM7k/device.mk)
 
 # Device identifier
 PRODUCT_DEVICE := KM7k
-PRODUCT_NAME := twrp_KM7k
+PRODUCT_NAME := pb_KM7k
 PRODUCT_BRAND := TECNO
 PRODUCT_MODEL := TECNO KM7k
 PRODUCT_MANUFACTURER := TECNO
