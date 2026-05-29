@@ -179,6 +179,9 @@ TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true
 #TWRP_EVENT_LOGGING := true
 
+# OrangeFox maintainer
+OF_MAINTAINER := Novicio301129
+
 # Tools
 #TW_OEM_BUILD := true
 TW_INCLUDE_RESETPROP := true
@@ -202,7 +205,7 @@ TW_DEFAULT_LANGUAGE := ru
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_LOAD_VENDOR_BOOT_MODULES := true
-TW_DEVICE_VERSION := KM7k_Novicio301129
+#TW_DEVICE_VERSION := KM7k_Novicio301129
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone28/temp"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 #TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
