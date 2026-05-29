@@ -179,9 +179,6 @@ TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true
 #TWRP_EVENT_LOGGING := true
 
-# OrangeFox maintainer
-OF_MAINTAINER := Novicio301129
-
 # Tools
 #TW_OEM_BUILD := true
 TW_INCLUDE_RESETPROP := true
